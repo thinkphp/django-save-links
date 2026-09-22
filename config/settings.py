@@ -32,7 +32,12 @@ SECRET_KEY = "django-insecure-nb2w3c)m=d)5qdf87d4_0)@lfss!5f+a$ua9ucw&vt8n37d^3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    "django-save-links.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
