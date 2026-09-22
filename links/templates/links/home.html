@@ -1,0 +1,39 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'links/style.css' %}">
+
+<div class="container">
+
+    <h1>My Link Saver</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Save Link</button>
+    </form>
+
+    <div class="links">
+
+        <h2>My Links</h2>
+
+        {% for link in links %}
+
+            <div class="link-card">
+                <h3>{{ link.title }}</h3>
+
+                <a href="{{ link.url }}" target="_blank">
+                    {{ link.url }}
+                </a>
+            </div>
+
+        {% empty %}
+
+            <p>No links yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
